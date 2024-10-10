@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import daisyui from "daisyui"
 export default {
   content: [
     "./index.html",
@@ -13,6 +14,12 @@ export default {
       "hoverGreen": "#C6E0C9",
     }
   },
-  plugins: [],
+  plugins: [
+    daisyui,
+  ],
+  daisyui: {
+    themes: [],
+  },
+
 }
 

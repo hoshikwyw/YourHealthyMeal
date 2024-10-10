@@ -22,7 +22,7 @@ const SideBar = () => {
     // console.log(active);
 
     return (
-        <div className=' bg-hoverGreen max-w-[15%] min-h-screen'>
+        <div className=' bg-hoverGreen max-w-[250px] min-h-screen'>
             {/* image section  */}
             <div className=" w-full h-full flex flex-col justify-center items-center pt-3">
                 <div className=" border-4 border-ButtonGreen p-1 h-32 w-32 rounded-full">
