@@ -7,10 +7,10 @@ export default {
   theme: {
     extend: {},
     colors: {
-      "paleYellow": "#FEF3CF",
-      "ButtonYellow": "#FFC100",
+      "paleGreen": "#E4F4C3",
+      "ButtonGreen": "#11867B",
       "NotiRed": "#FE3D3A",
-      "hoverYellow": "#FCDA70",
+      "hoverGreen": "#C6E0C9",
     }
   },
   plugins: [],
