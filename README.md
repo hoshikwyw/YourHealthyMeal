@@ -1,8 +1,28 @@
-# React + Vite
+# Oro - Nutrition Meals App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Oro is a modern nutrition meals app designed to help users plan, track, and pay for healthy meals. With a clean and user-friendly interface, Oro makes it easy to manage your daily food intake and track calorie consumption.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technologies Used](#technologies-used)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+
+- **Meal Planning**: Select meals from different categories such as salads, soups, and more.
+- **Calorie Tracker**: Keep track of your daily calorie intake with a circular progress tracker.
+- **User Accounts**: Users can manage their meal history, payment information, and profile settings.
+- **Payments**: Pay for meals directly through the app.
+- **Health Focused**: App features a design focused on promoting a healthy lifestyle.
+  
+## Installation
+
+To set up Oro on your local machine:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/oro-nutrition-app.git
