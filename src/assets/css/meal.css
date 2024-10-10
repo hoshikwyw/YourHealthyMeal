@@ -1,0 +1,11 @@
+.meatInputContainer {
+    background: #000;
+    width: 150px;
+    height: 20px;
+}
+.meatInputContainer .inputMealButton {
+    background: #ddcccc;
+    width: 100%;
+    height: 20px;
+    border: 2px solid red;
+}
