@@ -1,9 +1,18 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { useState } from 'react'
+import { LuSalad, LuSoup, LuFish } from "react-icons/lu";
+import { GiHerbsBundle, GiHamburger, GiNoodles, GiSlicedBread } from "react-icons/gi";
+
 
 const categories = [
-    "Soup", "Salad", "Herbs", "Fish", "Burger", "Noodle", "Bread"
+    { id: 1, name: "Soup", icon: <LuSoup /> },
+    { id: 2, name: "Salad", icon: <LuSalad /> },
+    { id: 3, name: "Herbs", icon: <GiHerbsBundle /> },
+    { id: 4, name: "Fish", icon: <LuFish /> },
+    { id: 5, name: "Burger", icon: <GiHamburger /> },
+    { id: 6, name: "Noodle", icon: <GiNoodles /> },
+    { id: 7, name: "Bread", icon: <GiSlicedBread /> },
 ]
 
 const Meal = () => {
@@ -49,7 +58,7 @@ const Meal = () => {
                     {categories.map((category, index) => (
                         <div key={index} className=" bg-hoverGreen w-16 h-28 rounded-t-[35px] rounded-b-[35px] flex flex-col justify-center items-center py-1">
                             <h1 className=' h-[50%] bg-[#fff] w-[80%] rounded-full'>icon</h1>
-                            <h1 className=' h-[50%]'>{category}</h1>
+                            <h1 className=' h-[50%]'>{category.name}</h1>
                         </div>
                     ))}
                 </div>
@@ -61,7 +70,7 @@ const Meal = () => {
                         <h1>Sort by: <span>Calorie</span></h1>
                     </div>
                     {/* meal cards  */}
-                    
+
                 </div>
             </div>
             {/* right side  */}
