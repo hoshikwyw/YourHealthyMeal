@@ -1,25 +1,26 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react'
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { CiViewBoard, CiForkAndKnife, CiUser, CiAlarmOn, CiCircleInfo } from "react-icons/ci";
-
-
+import { Link } from 'react-router-dom';
 
 const SideBar = () => {
-    const [active, setActive] = useState(2)
+    // Retrieve active menu from localStorage or set default to 1
+    const [active, setActive] = useState(() => {
+        return parseInt(localStorage.getItem("activeMenuItem")) || 1;
+    });
 
     const menuItems = [
-        { id: 1, icon: <CiViewBoard size={32} />, label: 'Dashboard' },
-        { id: 2, icon: <CiForkAndKnife size={32} />, label: 'Meals' },
-        { id: 3, icon: <CiUser size={32} />, label: 'User Account' },
+        { id: 1, icon: <CiViewBoard size={32} />, label: 'Dashboard', to: "/" },
+        { id: 2, icon: <CiForkAndKnife size={32} />, label: 'Meals', to: "/meal" },
+        { id: 3, icon: <CiUser size={32} />, label: 'User Account', to: "/profile" },
         { id: 4, icon: <CiAlarmOn size={32} />, label: 'Meal History' },
         { id: 5, icon: <CiCircleInfo size={32} />, label: 'Calorie Knowledge' },
     ];
 
     const clickMenu = (id) => {
-        setActive(parseInt(id));
-    }
-    // console.log(active);
+        setActive(id);
+        localStorage.setItem("activeMenuItem", id); // Save the active menu to localStorage
+    };
 
     return (
         <div className=' bg-hoverGreen max-w-[250px] min-h-screen'>
@@ -36,23 +37,27 @@ const SideBar = () => {
                 <div className=" w-full flex flex-col justify-center items-start ps-5 gap-3">
                     <ul className=' flex flex-col justify-center items-start gap-5 w-full cursor-pointer'>
                         {menuItems.map((menuItem) => (
-                            <li
+                            <Link
                                 key={menuItem.id}
-                                id={menuItem.id}
-                                className={`flex w-full justify-center items-center gap-2 font-semibold text-[#2C2A2A] ${active === menuItem.id ? "active" : ""
-                                    }`}
+                                to={menuItem?.to}
+                                className={` w-full ${active === menuItem.id ? "active" : ""}`}
                                 onClick={() => clickMenu(menuItem.id)}
                             >
-                                {menuItem.icon}
-                                <h1
-                                    className={` w-full flex items-center space-x-2 py-2 px-3 ${active === menuItem.id
+                                <li
+                                    className=' w-full flex justify-center items-center gap-2 font-semibold text-[#2C2A2A]'
+                                    id={menuItem.id}
+                                >
+                                    {menuItem.icon}
+                                    <h1
+                                        className={` w-full flex items-center space-x-2 py-2 px-3 ${active === menuItem.id
                                             ? "bg-[#fff] rounded-l-full text-[#2C2A2A]"
                                             : ""
-                                        }`}
-                                >
-                                    {menuItem.label}
-                                </h1>
-                            </li>
+                                            }`}
+                                    >
+                                        {menuItem.label}
+                                    </h1>
+                                </li>
+                            </Link>
                         ))}
                     </ul>
                 </div>
@@ -63,7 +68,7 @@ const SideBar = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default SideBar
+export default SideBar;
