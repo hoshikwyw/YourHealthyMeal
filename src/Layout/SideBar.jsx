@@ -5,9 +5,7 @@ import { Link } from 'react-router-dom';
 
 const SideBar = () => {
     // Retrieve active menu from localStorage or set default to 1
-    const [active, setActive] = useState(() => {
-        return parseInt(localStorage.getItem("activeMenuItem")) || 1;
-    });
+    const [active, setActive] = useState(1);
 
     const menuItems = [
         { id: 1, icon: <CiViewBoard size={32} />, label: 'Dashboard', to: "/" },
@@ -19,7 +17,6 @@ const SideBar = () => {
 
     const clickMenu = (id) => {
         setActive(id);
-        localStorage.setItem("activeMenuItem", id); // Save the active menu to localStorage
     };
 
     return (

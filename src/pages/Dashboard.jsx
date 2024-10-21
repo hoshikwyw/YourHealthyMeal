@@ -5,6 +5,7 @@ const Dashboard = () => {
   return (
     <div>
         <h1 className=' font-normal text-lg'>Dashboard</h1>
+        <div className="divider"></div>
     </div>
   )
 }
